@@ -1,0 +1,44 @@
+@baseUrl = http://localhost:5000
+
+#Создание нового пользователя
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "email": "qwerty@mail.tu",
+  "password": "qwer1234"
+}
+
+###
+
+#Создания нового объявления
+POST {{baseUrl}}/advert
+Content-Type: application/json
+
+{
+  "title": "Python",
+  "description": "description1",
+  "author": "qwerty@mail.tu"
+}
+
+###
+
+#Поиск объявления
+GET {{baseUrl}}/advert/1
+Content-Type: application/json
+
+###
+
+#Изменение объявления
+PATCH  {{baseUrl}}/advert/1
+Content-Type: application/json
+
+{
+  "title": "Java"
+}
+
+###
+
+#Удаление объявления
+DELETE  {{baseUrl}}/advert/1
+Content-Type: application/json
